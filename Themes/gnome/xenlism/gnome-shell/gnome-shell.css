@@ -571,7 +571,7 @@ StScrollBar StButton#vhandle:active {
 #panelRight:rtl {
 	padding-right: 4px;
 }
-
+#panelApplications,
 #panelActivities {
 	border:1px;
     	background-image: url("logo.png");
@@ -581,7 +581,7 @@ StScrollBar StButton#vhandle:active {
    	color: rgba(0,0,0,0.0);
 	background-gradient-direction: none;
 }
-
+#panelApplications:hover,
 #panelActivities:hover {
 	border:1px;
 	background-image: url("logo-hover.png");
@@ -589,7 +589,7 @@ StScrollBar StButton#vhandle:active {
 	border-color: transparent;
 }
 
-
+#panelApplications:overview,
 #panelActivities:overview,
 #panelActivities:active{
     	background-image: url("logo.png");
@@ -621,9 +621,6 @@ StScrollBar StButton#vhandle:active {
 #appMenu {
 	spinner-image: url("process-working.svg");
 	spacing: 4px;
-	app-icon-bottom-clip: 1px;
-	height: 0px;
-	width: 0px;
 }
 #appMenu:overview {
 	color:rgba(0,0,0,0)
