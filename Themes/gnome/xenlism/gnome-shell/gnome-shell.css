@@ -571,8 +571,11 @@ StScrollBar StButton#vhandle:active {
 #panelRight:rtl {
 	padding-right: 4px;
 }
+
 #panelApplications,
-#panelActivities {
+#panelActivities,
+#panelApplications:hover,
+#panelActivities:hover {
 	border:1px;
     	background-image: url("logo.png");
 	background-position: center;
@@ -581,17 +584,18 @@ StScrollBar StButton#vhandle:active {
    	color: rgba(0,0,0,0.0);
 	background-gradient-direction: none;
 }
-#panelApplications:hover,
-#panelActivities:hover {
+
+#panelApplications:active ,
+#panelActivities:active {
 	border:1px;
 	background-image: url("logo-hover.png");
-	background-gradient-direction: none;
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(240,240,240,0.9);
+	background-gradient-end: rgba(240,240,240,0.9);
 	border-color: transparent;
 }
-
 #panelApplications:overview,
-#panelActivities:overview,
-#panelActivities:active{
+#panelActivities:overview {
     	background-image: url("logo.png");
 	border:1px solid red;
 	border-color: transparent;
@@ -640,7 +644,11 @@ StScrollBar StButton#vhandle:active {
 	height: 0px;
 	width: 0px;
 }
-
+.panel-button:active {
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(240,240,240,0.9);
+	background-gradient-end: rgba(240,240,240,0.9);
+}
 .panel-button:active #appMenuIcon,
 .panel-button:checked #appMenuIcon,
 .panel-button:focus #appMenuIcon {
@@ -930,17 +938,10 @@ StScrollBar StButton#vhandle:active {
 	color: white;
 	font-size: 9pt;
 	padding: 4px 0px;
-	background-color: rgba(255,255,255,0.2);
-	border: 2px solid rgba(255,255,255,0.5);
-	border-left: 0px;
-	border-radius: 0px 20px 20px 0px;
+	background-color: rgba(255,255,255,0);
+	border: 0px solid rgba(255,255,255,0);
 }
 
-#dash:rtl {
-	border-left: 2px;
-	border-right: 0px;
-	border-radius: 20px 0px 0px 20px;
-}
 
 .placeholder {
 	background-image: url("dash-placeholder.svg");
