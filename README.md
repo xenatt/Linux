@@ -1,7 +1,7 @@
 Linux
 =====
 
-This repository is deveopments.   
+This repository is developments.   
 This Real time Up-To-Date.
 
 --------------------
