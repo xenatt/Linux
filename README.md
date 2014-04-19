@@ -9,5 +9,6 @@ This Real time Up-To-Date.
 Gnome Shell , GTK and Icon themes    
 
 
-![screenshot](Screenshot.png)
-![screenshot](Screenshot2.png)
+![screenshot](xenlism_cover1.png)
+![screenshot](xenlism_cover2.jpg)
+![screenshot](xenlism_cover4.jpg)
