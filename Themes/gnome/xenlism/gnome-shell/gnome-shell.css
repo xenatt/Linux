@@ -145,12 +145,13 @@ StScrollBar StButton#vhandle:active {
 
 .popup-menu-boxpointer,
 .candidate-popup-boxpointer {
-	-arrow-border-radius: 4px;
-	-arrow-background-color: #eaeaea;
+ 	-boxpointer-gap: 4px;
+	-arrow-border-radius: 5px;
+	-arrow-background-color: rgba(240, 240, 240,0.9);
 	-arrow-border-width: 1px;
-	-arrow-border-color: #999;
-	-arrow-base: 16px;
-	-arrow-rise: 8px;
+	-arrow-border-color: rgba(255,255,255,1);
+	-arrow-base: 0px;
+	-arrow-rise: 0px;
 }
 
 .popup-menu {
@@ -229,8 +230,8 @@ StScrollBar StButton#vhandle:active {
 
 .popup-separator-menu-item {
 	-gradient-height: 1px;
-	-gradient-start: rgba(0,0,0,0.1);
-	-gradient-end: rgba(0,0,0,0.1);
+	-gradient-start: rgba(255,255,255,0.1);
+	-gradient-end: rgba(255,255,255,0.1);
 	-margin-horizontal: 0px;
 	height: 1px;
 	padding: 2px 0px;
@@ -552,7 +553,7 @@ StScrollBar StButton#vhandle:active {
 }
 
 #panelLeft, #panelCenter {
-	spacing: 4px;
+	spacing: 0px;
 }
 
 #panelLeft:ltr {
@@ -627,7 +628,7 @@ StScrollBar StButton#vhandle:active {
 }
 
 .panel-button #appMenuIcon {
-	app-icon-bottom-clip: 0px;
+	app-icon-bottom-clip: 1px;
 	height: 0px;
 	width: 0px;
 }
@@ -639,14 +640,21 @@ StScrollBar StButton#vhandle:active {
 }
 
 .app-menu-icon {
-	width: 24px;
-	height: 24px;
+	width: 0px;
+	height: 0px;
 }
 
 .panel-button #appMenu {
-	padding: 0 5px 0 5px;
+	padding: 0;
 }
 
+#panel .unicode-arrow { 
+	font-size: 0;
+	width: 0;
+}
+#panel .panel-button .popup-menu-arrow {
+	width: 0;
+}
 .panel-button {
 	-natural-hpadding: 12px;
 	-minimum-hpadding: 6px;
