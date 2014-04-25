@@ -38,7 +38,7 @@ fi
 if [ -f "${TRGZIP}" ]
 	then 
 		echo "extract xenlism theme";
-		unzip "${TRGZIP}" -d "${TRGDIR}" > "$TRGDIR/unzip.log" ;
+		unzip "${TRGZIP}" -d "${TRGDIR}";
 else
 		echo "error Download xenlism theme file.";
 		echo "Please try again later.";
