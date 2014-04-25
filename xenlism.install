@@ -1,0 +1,82 @@
+#!/bin/bash
+URL="https://raw.githubusercontent.com/xenatt/Linux/master/Themes/gnome/xenlism-gnome-shell.zip"
+TRGDIR="~/.xenlism-install/"
+TRGTHM="~/.xenlism-install/xenlism/"
+TRGZIP="~/.xenlism-install/xenlism-gnome-shell.zip"
+if [ ! -d "$TRGDIR" ] 
+	then
+		echo "Make Theme Installer Folder";
+		mkdir -p $TRGDIR;
+else
+		echo "Make Theme Installer Folder";
+		rm -rf $TRGDIR;
+		mkdir -p $TRGDIR;
+fi
+if [[ -f '/usr/local/bin/curl' || -f '/bin/curl' || -f '/sbin/curl' || -f '/usr/local/sbin/curl' ]]
+	then
+		echo "Download xenlism theme from github";
+		curl "$URL" -o "$TRGZIP";
+elif [[ -f '/usr/local/bin/wget' || -f '/bin/wget' || -f '/sbin/wget' || -f '/usr/local/sbin/wget' ]]
+		then
+		echo "Download xenlism theme from github";
+		wget "$URL" -O "$TRGZIP"; 
+else
+	echo "curl or wget is not installed on your system.";
+	echo "Install Curl or Wget And try again.";
+	echo "";
+	echo "Install Curl on Arch Linux.";
+	echo "sudo pacman -S curl";
+	echo "";
+	echo "Install Curl on Ubuntu Linux.";
+	echo "sudo apt-get install curl";
+	echo "";
+	echo "Install Curl on Ubuntu Linux.";
+	echo "sudo yum install curl";
+	exit;
+fi
+
+if [ -f "${TRGZIP}" ]
+	then 
+		echo "extract xenlism theme";
+		unzip "${TRGZIP}" -d "${TRGDIR}" > "$TRGDIR/unzip.log" ;
+else
+		echo "error Download xenlism theme file.";
+		echo "Please try again later.";
+		exit;
+fi
+
+
+if [ -d "${TRGTHM}" ]
+	then
+		if [ -f "${TRGTHM}/.DS_Store" ]
+			then 
+				rm -rf "${TRGTHM}/.DS_Store";
+		fi
+		if [ -f "${TRGTHM}/._.DS_Store" ]
+			then
+				rm -rf "${TRGTHM}/._.DS_Store";
+		fi
+		if [ -d /usr/share/themes/xenlism/ ]
+			then	
+				sudo rm -rf /usr/share/themes/xenlism/;
+		fi
+		echo "Install xenlism to Themes Folder"
+		sudo cp -R "${TRGTHM}"  /usr/share/themes/;
+		sudo chmod 755 -Rc /usr/share/themes/xenlism;
+else
+	echo "Error xenlism theme not exist in Installer Folder"
+	echo "Please try again later"
+	exit;
+fi
+
+if [ -d /usr/share/themes/xenlism ]
+	then
+		echo "Apply GTK & Gnome Shell theme"
+		gsettings set org.gnome.desktop.interface gtk-theme "xenlism" &&  gsettings set org.gnome.desktop.wm.preferences theme 'xenlism';
+		echo "Clean Installer Folder";
+		rm -rf ${TRGDIR};
+else
+	echo "Error xenlism theme not exist in themes Folder";
+	exit;
+fi
+
