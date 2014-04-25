@@ -30,7 +30,7 @@ else
 	echo "Install Curl on Ubuntu Linux.";
 	echo "sudo apt-get install curl";
 	echo "";
-	echo "Install Curl on Ubuntu Linux.";
+	echo "Install Curl on Fedora Linux.";
 	echo "sudo yum install curl";
 	exit;
 fi
