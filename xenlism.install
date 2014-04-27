@@ -12,11 +12,11 @@ else
 		rm -rf $TRGDIR;
 		mkdir -p $TRGDIR;
 fi
-if [[ -f '/usr/local/bin/curl' || -f '/bin/curl' || -f '/sbin/curl' || -f '/usr/local/sbin/curl' ]]
+if [[ -f '/usr/local/bin/curl' || -f '/bin/curl' || -f '/usr/bin/curl' || -f '/sbin/curl' || -f '/usr/local/sbin/curl' ]]
 	then
 		echo "Download xenlism theme from github";
 		curl "$URL" -o "$TRGZIP";
-elif [[ -f '/usr/local/bin/wget' || -f '/bin/wget' || -f '/sbin/wget' || -f '/usr/local/sbin/wget' ]]
+elif [[ -f '/usr/local/bin/wget' || -f '/bin/wget' || -f '/usr/bin/wget' || -f '/sbin/wget' || -f '/usr/local/sbin/wget' ]]
 		then
 		echo "Download xenlism theme from github";
 		wget "$URL" -O "$TRGZIP"; 
